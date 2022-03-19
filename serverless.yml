@@ -22,11 +22,35 @@ functions:
           path: /
           method: get
   createTask:
-    handler: src/tasks.createTask
+    handler: src/tasks/createTask.createTask
     events:
       - httpApi:
           path: /tasks
           method: post
+  getTasks:
+    handler: src/tasks/getTasks.getTasks
+    events:
+      - httpApi:
+          path: /tasks
+          method: get
+  getTask:
+    handler: src/tasks/getTask.getTask
+    events:
+      - httpApi:
+          path: /tasks/{id}
+          method: get
+  updateTask:
+    handler: src/tasks/updateTask.updateTask
+    events:
+      - httpApi:
+          path: /tasks/{id}
+          method: put
+  deleteTask:
+    handler: src/tasks/deleteTask.deleteTask
+    events:
+      - httpApi:
+          path: /tasks/{id}
+          method: delete
 
 resources: 
   Resources:
